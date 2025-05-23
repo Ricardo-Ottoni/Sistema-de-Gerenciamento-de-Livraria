@@ -19,7 +19,7 @@ def cadastrarLivro():
     while True:
         preco = float(input('Preço: R$ '))
         if preco <= 0:
-            print('Preço inválido!')
+            print('>>> Preço inválido!')
         else:
             break
     
@@ -81,6 +81,8 @@ def buscarLivro():
                 print(f'-- Autor: {livro['autor']}')
                 print(f'-- Gênero: {livro['genero']}')
                 print(f'-- Preço: R$ {livro['preco']:.2f}')
+            else:
+                print('>>> Livro não encontrado.')
             i += 1
 
     elif opcao == '2':
@@ -103,7 +105,59 @@ def buscarLivro():
         print('\n>>> Opção inválida!! Tente novamente.')
 
     print('-----------------------------------------------------')
+
+# 6° Função p/ editar livros cadastrados
+def editarLivro():
+    if not livros:
+        print('\n>>> Não há livros cadastrados.')
+        return
     
+    print('\n-----------------------------------------------------')
+    print('                --- Editar Livros ---                ')
+    
+    livroEscolhido = input('Informe o título do livro que deseja editar:\n>  ').upper()
+    # Testando 'for', mas tb pode ser por while
+    for livro in livros:
+        if livro['titulo'].upper() == livroEscolhido:
+            print
+            print(f'>>> Livro encontrado com sucesso!\n')
+            print(f'Título: {livro['titulo']}')
+            print(f'-- Autor: {livro['autor']}')
+            print(f'-- Gênero: {livro['genero']}')
+            print(f'-- Preço: R$ {livro['preco']:.2f}\n')
+            
+            print(f'Digite os novos dados do livro: ')
+            novoTitulo = input('Novo título: ').upper()
+            novoAutor = input('Novo autor: ')
+            novoGenero = input('Novo gênero: ')
+
+            while True:
+                novoPreco = float(input('Novo preço: R$ '))
+                if novoPreco <= 0:
+                    print('>>> Preço inválido!')
+                else:
+                    break
+
+            if novoTitulo:
+                livro['titulo'] = novoTitulo
+            if novoAutor:
+                livro['autor'] = novoAutor
+            if novoGenero:
+                livro['genero'] = novoGenero
+            if novoPreco:
+                livro['preco'] = novoPreco
+
+            print('>>> Dados do livro atualizado com sucesso!\n')
+            print(f'Título: {livro['titulo']}')
+            print(f'-- Autor: {livro['autor']}')
+            print(f'-- Gênero: {livro['genero']}')
+            print(f'-- Preço: R$ {livro['preco']:.2f}')
+    
+        else:
+                print('\n>>> Livro não encontrado.')
+    
+    print('-----------------------------------------------------')
+
 # 1° Criação do menu principal
 print('-----------------------------------------------------')
 print('\n  BEM-VINDO AO SISTEMA DE GERENCIAMENTO DE LIVRARIA  \n')
@@ -135,8 +189,8 @@ def menuPrincipal():
             exibirLivros()
         elif opcao == '3':
             buscarLivro()
-        # elif opcao == '4':
-        #     editarLivro()
+        elif opcao == '4':
+            editarLivro()
         # elif opcao == '5':
         #     excluirLivro()
         # elif opcao == '6':
