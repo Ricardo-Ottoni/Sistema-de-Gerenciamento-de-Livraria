@@ -5,10 +5,17 @@ livros = []
 def cadastrarLivro():
     print('\n-----------------------------------------------------')
     print('               --- Cadastrar Livro ---               ')
-    titulo = input('Título: ')                              
+    while True:
+        titulo = input('Título: ').upper() 
+        if any(livro['titulo'].upper() == titulo for livro in livros): 
+            print(f'\nLivro: "{titulo}" já é cadastrado no sistema!')
+            return
+        else:
+            break
+        
     autor = input('Autor: ')
     genero = input('Gênero: ')
-    
+
     while True:
         preco = float(input('Preço: R$ '))
         if preco <= 0:
