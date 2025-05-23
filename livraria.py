@@ -8,7 +8,7 @@ def cadastrarLivro():
     while True:
         titulo = input('Título: ').upper() 
         if any(livro['titulo'].upper() == titulo for livro in livros): 
-            print(f'\nLivro: "{titulo}" já é cadastrado no sistema!')
+            print(f'\n>>> Livro: "{titulo}" já está cadastrado no sistema!')
             return
         else:
             break
@@ -34,7 +34,7 @@ def cadastrarLivro():
     print(f'\n>>> Livro: "{titulo}" cadastrado com sucesso!')    
     print('-----------------------------------------------------')
 
-# 4° Função p/ exibir os libros cadastrados no sistema
+# 4° Função p/ exibir os livros cadastrados no sistema
 def exibirLivros():
     print('\n-----------------------------------------------------')
     print('               --- Lista de Livros ---               ')
@@ -44,18 +44,66 @@ def exibirLivros():
         return
     
     i = 0
-    while i < len(livros):
+    while i < len(livros):          
         livro = livros[i]
         print(f'Título: {livro['titulo']}')
         print(f'-- Autor: {livro['autor']}')
         print(f'-- Gênero: {livro['genero']}')
         print(f'-- Preço: R$ {livro['preco']:.2f}\n')
-        print
         i += 1
 
     print(f'>>> Total de livros cadastrados: {i}')
     print('-----------------------------------------------------')
 
+# 5° Função p/ buscar um livro cadastrado pelo título ou autor
+def buscarLivro():
+    if not livros:
+        print('\n>>> Não há livros cadastrados.')
+        return
+    
+    print('\n-----------------------------------------------------')
+    print('                --- Buscar Livros ---                ')
+    print('Escolha opção de busca:')
+    print(':   1 -> Por Título                                 :')
+    print(':   2 -> Por Autor                                  :')
+    print(':   3 -> Sair da Busca                              :')
+
+    opcao = input('\nDigite o valor escolhido: ')
+    
+    if opcao == '1':
+        porTitulo = input('Informe o título: ').upper()
+        i = 0
+        while i < len(livros):
+            livro = livros[i]
+            if porTitulo in livro['titulo']:
+                print(f'>>> Livro encontrado com sucesso!\n')
+                print(f'Título: {livro['titulo']}')
+                print(f'-- Autor: {livro['autor']}')
+                print(f'-- Gênero: {livro['genero']}')
+                print(f'-- Preço: R$ {livro['preco']:.2f}')
+            i += 1
+
+    elif opcao == '2':
+        porAutor = input('Informe o autor: ').upper()
+        i = 0
+        while i < len(livros):
+            livro = livros[i]
+            if porAutor in livro['autor'].upper():
+                print(f'>>> Livro encontrado com sucesso!\n')
+                print(f'Título: {livro['titulo']}')
+                print(f'-- Autor: {livro['autor']}')
+                print(f'-- Gênero: {livro['genero']}')
+                print(f'-- Preço: R$ {livro['preco']:.2f}')
+            i += 1
+
+    elif opcao == '3':
+        print('\n>>> Você saiu do buscador.')
+        return
+    else:
+        print('\n>>> Opção inválida!! Tente novamente.')
+
+    print('-----------------------------------------------------')
+    
 # 1° Criação do menu principal
 print('-----------------------------------------------------')
 print('\n  BEM-VINDO AO SISTEMA DE GERENCIAMENTO DE LIVRARIA  \n')
@@ -85,8 +133,8 @@ def menuPrincipal():
             cadastrarLivro()
         elif opcao == '2':
             exibirLivros()
-        # elif opcao == '3':
-        #     buscaLivro()
+        elif opcao == '3':
+            buscarLivro()
         # elif opcao == '4':
         #     editarLivro()
         # elif opcao == '5':
