@@ -1,15 +1,44 @@
-# Criação do menu principal
+# 2° Criação de uma lista vazia
+livros = []
+
+# 3° Função p/ cadastrar livros por título, autor, gênero e preço
+def cadastrarLivro():
+    print('\n-----------------------------------------------------')
+    print('               --- Cadastrar Livro ---               ')
+    titulo = input('Título: ')                              
+    autor = input('Autor: ')
+    genero = input('Gênero: ')
+    
+    while True:
+        preco = float(input('Preço: R$ '))
+        if preco <= 0:
+            print('Preço inválido!')
+        else:
+            break
+    
+    # Adicionando livros a lista
+    livros.append({
+        'titulo':titulo,
+        'autor': autor,
+        'genero': genero,
+        'preco': preco
+    })
+
+    print(f'\nLivro: "{titulo}" cadastrado com sucesso!')    
+    print('-----------------------------------------------------')
+
+# 1° Criação do menu principal
 print('-----------------------------------------------------')
 print('\n  BEM-VINDO AO SISTEMA DE GERENCIAMENTO DE LIVRARIA  \n')
 print('-----------------------------------------------------')
 print('Verifique o menu abaixo e selecione a opção desejada.')
 print('-----------------------------------------------------\n')
 
-
+# função principal (menu)
 def menuPrincipal():
     while True:
         print('\n-----------------------------------------------------')
-        print('                    --- MENU ---                     ')
+        print('                  ----- MENU -----                   ')
         print('-----------------------------------------------------')
         print(':   1 -> Cadastrar Livro no Sistema                 :')
         print(':   2 -> Exibir Livros Cadastrados                  :')
@@ -23,25 +52,25 @@ def menuPrincipal():
         
         opcao = input('Digite o valor escolhido: ')
         
-        # if opcao == '1':
-        #     CadastrarLivro()
+        if opcao == '1':
+            cadastrarLivro()
         # elif opcao == '2':
-        #     ExibirLivros()
+        #     exibirLivros()
         # elif opcao == '3':
-        #     BuscaLivro()
+        #     buscaLivro()
         # elif opcao == '4':
-        #     EditarLivro()
+        #     editarLivro()
         # elif opcao == '5':
-        #     ExcluirLivro()
+        #     excluirLivro()
         # elif opcao == '6':
-        #     SalvarDados()
+        #     dalvarDados()
         #     print('Dados salvos com sucesso!')
         # elif opcao == '7':
-        #     CarregarDados()
+        #     carregarDados()
         # elif opcao == '8':
         #     print('Finalizando sistema...')
         #     break
-        # else:
-        #     print('Opção inválida!! Tente novamente.')
+        else:
+            print('Opção inválida!! Tente novamente.')
 
 menuPrincipal()
