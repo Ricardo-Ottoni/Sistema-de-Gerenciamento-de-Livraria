@@ -1,4 +1,3 @@
-TÍTULO | AUTOR | GÊNERO | PREÇO
 INTRODUÇÃO À LINGUAGEM SQL | Thomas Nield  | Computação e Informática | 44.00
 GUIA DO PYTHON PARA DATA SCIENCE | Jake VanderPlas | Computação e Informática | 103.32
 ENTENDENDO ALGORITMOS | Aditya Y. Bhargava | Computação e Informática | 57.75
