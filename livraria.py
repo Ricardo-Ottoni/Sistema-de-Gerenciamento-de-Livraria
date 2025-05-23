@@ -284,11 +284,12 @@ def menuPrincipal():
             salvarDados()
         elif opcao == '7':
             carregarDados()
-        # elif opcao == '8':
-        #     print('Finalizando sistema...')
-        #     break
+        elif opcao == '8':
+            print('\n>>> SISTEMA FINALIZADO <<<')
+            print('-----------------------------------------------------')
+            break
         else:
-            print('>>> Opção inválida!! Tente novamente.')
+            print('\n>>> Opção inválida!! Tente novamente.')
 
 # 11° Chamar a função p/ carregar dados logo qdo o programa inicia.
 carregarDados()
