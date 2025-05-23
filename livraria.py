@@ -31,7 +31,29 @@ def cadastrarLivro():
         'preco': preco
     })
 
-    print(f'\nLivro: "{titulo}" cadastrado com sucesso!')    
+    print(f'\n>>> Livro: "{titulo}" cadastrado com sucesso!')    
+    print('-----------------------------------------------------')
+
+# 4° Função p/ exibir os libros cadastrados no sistema
+def exibirLivros():
+    print('\n-----------------------------------------------------')
+    print('               --- Lista de Livros ---               ')
+    
+    if not livros:
+        print('\n>>> Não há livros cadastrados.')
+        return
+    
+    i = 0
+    while i < len(livros):
+        livro = livros[i]
+        print(f'Título: {livro['titulo']}')
+        print(f'-- Autor: {livro['autor']}')
+        print(f'-- Gênero: {livro['genero']}')
+        print(f'-- Preço: R$ {livro['preco']:.2f}\n')
+        print
+        i += 1
+
+    print(f'>>> Total de livros cadastrados: {i}')
     print('-----------------------------------------------------')
 
 # 1° Criação do menu principal
@@ -61,8 +83,8 @@ def menuPrincipal():
         
         if opcao == '1':
             cadastrarLivro()
-        # elif opcao == '2':
-        #     exibirLivros()
+        elif opcao == '2':
+            exibirLivros()
         # elif opcao == '3':
         #     buscaLivro()
         # elif opcao == '4':
@@ -78,6 +100,6 @@ def menuPrincipal():
         #     print('Finalizando sistema...')
         #     break
         else:
-            print('Opção inválida!! Tente novamente.')
+            print('>>> Opção inválida!! Tente novamente.')
 
 menuPrincipal()
