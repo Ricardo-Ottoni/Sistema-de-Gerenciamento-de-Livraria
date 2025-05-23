@@ -164,7 +164,7 @@ def excluirLivro():
     
     print('-----------------------------------------------------')
     print('                --- Excluir Livros ---               ')
-    
+
     livroEscolhido = input('Informe o título do livro que deseja excluir:\n> ').upper()
 
     for livro in livros:
@@ -185,7 +185,36 @@ def excluirLivro():
                 #break
     else:
         print('\n>>> Livro não encontrado.')
-    print('-----------------------------------------------------')        
+    print('-----------------------------------------------------')  
+
+# 8° Função p/ salvar os dados do sistema em arquivo txt 
+def salvarDados():
+    if not livros:
+        print('\n>>> Não há livros cadastrados.')
+        return
+    
+    print('-----------------------------------------------------')
+    print('                --- Salvar Livros ---                ')
+
+    # with faz parte da biblioteca do Python, age garatindo q o arquivo será fechado automaticamente
+    # open vai abrir ou criar um arquivo de texto, no caso chamdo de livros.txt
+    # 'w' é o modo de escrita e 'utf-8' padrão p/ suportar acentos que nem no html
+    with open('livraria.txt', 'w', encoding='utf-8') as arquivo:
+        i = 0
+        # Cria o cabeçalho da lista
+        arquivo.write('TÍTULO | AUTOR | GÊNERO | PREÇO\n')
+        while i < len(livros):
+            livro = livros[i]
+
+            # Cria os dados de cada livro
+            dadosLivro = f"{livro['titulo']} | {livro['autor']} | {livro['genero']} | {livro['preco']:.2f}\n"
+
+            # Escreve os dados no arquivo
+            arquivo.write(dadosLivro)
+            i += 1
+        
+        print('\n>>> Dados salvos com sucesso!') 
+    print('-----------------------------------------------------') 
 
 # 1° Criação do menu principal
 print('-----------------------------------------------------')
@@ -194,7 +223,7 @@ print('-----------------------------------------------------')
 print('Verifique o menu abaixo e selecione a opção desejada.')
 print('-----------------------------------------------------\n')
 
-# função principal (menu)
+# Função principal (menu)
 def menuPrincipal():
     while True:
         print('\n-----------------------------------------------------')
@@ -222,9 +251,8 @@ def menuPrincipal():
             editarLivro()
         elif opcao == '5':
             excluirLivro()
-        # elif opcao == '6':
-        #     salvarDados()
-        #     print('Dados salvos com sucesso!')
+        elif opcao == '6':
+            salvarDados()
         # elif opcao == '7':
         #     carregarDados()
         # elif opcao == '8':
