@@ -94,6 +94,7 @@ def buscarLivro():
     elif opcao == '2':
         porAutor = input('Informe o autor: ').upper()
         i = 0
+        encontrado = False
         while i < len(livros):
             livro = livros[i]
             if porAutor in livro['autor'].upper():
@@ -103,6 +104,8 @@ def buscarLivro():
                 print(f'-- Gênero: {livro['genero']}')
                 print(f'-- Preço: R$ {livro['preco']:.2f}')
             i += 1
+        if not encontrado:
+            print('>>> Livro não encontrado.')
 
     elif opcao == '3':
         print('\n>>> Você saiu do buscador.')
