@@ -76,17 +76,20 @@ def buscarLivro():
     if opcao == '1':
         porTitulo = input('Informe o título: ').upper()
         i = 0
+        encontrado = False      # uso de flag (variável booleana) p/ controlar o fluxo de execução    
         while i < len(livros):
             livro = livros[i]
-            if porTitulo in livro['titulo']:
+            if porTitulo == livro['titulo']:
                 print(f'>>> Livro encontrado com sucesso!\n')
                 print(f'Título: {livro['titulo']}')
                 print(f'-- Autor: {livro['autor']}')
                 print(f'-- Gênero: {livro['genero']}')
                 print(f'-- Preço: R$ {livro['preco']:.2f}')
-            else:
-                print('>>> Livro não encontrado.')
+                encontrado = True
             i += 1
+        if not encontrado:
+            print('>>> Livro não encontrado.')
+            
 
     elif opcao == '2':
         porAutor = input('Informe o autor: ').upper()
