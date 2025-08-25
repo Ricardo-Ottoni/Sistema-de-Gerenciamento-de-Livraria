@@ -1,8 +1,4 @@
-# 9° Importar biblioteca p/ verificar existência de dados
-import os
-
-# 2° Criação de uma lista vazia
-livros = []
+from database import *
 
 # 3° Função p/ cadastrar livros por título, autor, gênero e preço
 def cadastrarLivro():
@@ -76,25 +72,21 @@ def buscarLivro():
     if opcao == '1':
         porTitulo = input('Informe o título: ').upper()
         i = 0
-        encontrado = False      # uso de flag (variável booleana) p/ controlar o fluxo de execução    
         while i < len(livros):
             livro = livros[i]
-            if porTitulo == livro['titulo']:
+            if porTitulo in livro['titulo']:
                 print(f'>>> Livro encontrado com sucesso!\n')
                 print(f'Título: {livro['titulo']}')
                 print(f'-- Autor: {livro['autor']}')
                 print(f'-- Gênero: {livro['genero']}')
                 print(f'-- Preço: R$ {livro['preco']:.2f}')
-                encontrado = True
+            else:
+                print('>>> Livro não encontrado.')
             i += 1
-        if not encontrado:
-            print('>>> Livro não encontrado.')
-            
 
     elif opcao == '2':
         porAutor = input('Informe o autor: ').upper()
         i = 0
-        encontrado = False
         while i < len(livros):
             livro = livros[i]
             if porAutor in livro['autor'].upper():
@@ -104,8 +96,6 @@ def buscarLivro():
                 print(f'-- Gênero: {livro['genero']}')
                 print(f'-- Preço: R$ {livro['preco']:.2f}')
             i += 1
-        if not encontrado:
-            print('>>> Livro não encontrado.')
 
     elif opcao == '3':
         print('\n>>> Você saiu do buscador.')
@@ -194,110 +184,4 @@ def excluirLivro():
                 #break
     else:
         print('\n>>> Livro não encontrado.')
-    print('-----------------------------------------------------')  
-
-# 8° Função p/ salvar os dados do sistema em arquivo txt 
-def salvarDados():
-    if not livros:
-        print('\n>>> Não há livros cadastrados.')
-        return
-    
-    print('-----------------------------------------------------')
-    print('                --- Salvar Dados ---                 ')
-
-    # with faz parte da biblioteca do Python, age garatindo q o arquivo será fechado automaticamente
-    # open vai abrir ou criar um arquivo de texto, no caso chamdo de livros.txt
-    # 'w' é o modo de escrita e 'utf-8' padrão p/ suportar acentos que nem no html
-    with open('livraria.txt', 'w', encoding='utf-8') as arquivo:
-        i = 0
-        
-        # Pode ser por 'for' tb.
-        while i < len(livros):
-            livro = livros[i]
-
-            # Cria os dados de cada livro
-            dadosLivro = f"{livro['titulo']} | {livro['autor']} | {livro['genero']} | {livro['preco']:.2f}\n"
-
-            # Escreve os dados no arquivo
-            arquivo.write(dadosLivro)
-            i += 1
-        
-        print('\n>>> Dados salvos com sucesso!') 
     print('-----------------------------------------------------') 
-
-# 10° Função p/ carregar dados salvos de um arquivo txt 
-def carregarDados():
-    # Verificando se existe o arquivo txt
-    # 'r' é o modo leitura
-    if not os.path.exists('livraria.txt'):
-        print('\n>>> Não há arquivo para carregar.')
-        return
-    else:
-        print('\n>>> Dados carregados com sucesso!')
-
-    # Abre e fecha o arquivo automaticamente
-    with open('livraria.txt', 'r', encoding='utf-8') as arquivo:
-
-        # Pode ser por 'while' tb.
-        for dadosLivro in arquivo:
-            dados = dadosLivro.split(' | ')          # split é p/ dividir em partes com base em um separador
-            if len(dados) == 4:
-                livros.append({
-                    'titulo': dados[0],
-                    'autor': dados[1],
-                    'genero': dados[2],
-                    'preco': float(dados[3])
-                })
-
-
-
-# 1° Criação do menu principal
-print('-----------------------------------------------------')
-print('\n  BEM-VINDO AO SISTEMA DE GERENCIAMENTO DE LIVRARIA  \n')
-print('-----------------------------------------------------')
-print('Verifique o menu abaixo e selecione a opção desejada.')
-print('-----------------------------------------------------\n')
-
-# Função principal (menu)
-def menuPrincipal():
-    while True:
-        print('\n-----------------------------------------------------')
-        print('                  ----- MENU -----                   ')
-        print('-----------------------------------------------------')
-        print(':   1 -> Cadastrar Livro no Sistema                 :')
-        print(':   2 -> Exibir Livros Cadastrados                  :')
-        print(':   3 -> Buscar um Livro Específico                 :')
-        print(':   4 -> Editar Dados de um Livro                   :')
-        print(':   5 -> Excluir Livro do Sistema                   :')
-        print(':   6 -> Salvar Dados no Sistema                    :')
-        print(':   7 -> Carregar Dados Salvos                      :')
-        print(':   8 -> Sair do Sistema                            :')
-        print('-----------------------------------------------------\n')
-        
-        opcao = input('Digite o valor escolhido: ')
-        
-        if opcao == '1':
-            cadastrarLivro()
-        elif opcao == '2':
-            exibirLivros()
-        elif opcao == '3':
-            buscarLivro()
-        elif opcao == '4':
-            editarLivro()
-        elif opcao == '5':
-            excluirLivro()
-        elif opcao == '6':
-            salvarDados()
-        elif opcao == '7':
-            carregarDados()
-        elif opcao == '8':
-            print('\n>>> SISTEMA FINALIZADO <<<')
-            print('-----------------------------------------------------')
-            break
-        else:
-            print('\n>>> Opção inválida!! Tente novamente.')
-
-# 11° Chamar a função p/ carregar dados logo qdo o programa inicia.
-carregarDados()
-
-menuPrincipal()
