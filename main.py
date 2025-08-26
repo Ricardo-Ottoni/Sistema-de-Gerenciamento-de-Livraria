@@ -1,7 +1,6 @@
 from services import *
 from database import *
 
-
 # 1° Criação do menu principal
 print('-----------------------------------------------------')
 print('\n  BEM-VINDO AO SISTEMA DE GERENCIAMENTO DE LIVRARIA  \n')

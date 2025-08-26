@@ -4,7 +4,6 @@ import os
 # 2° Criação de uma lista vazia
 livros = []
 
-
 # 8° Função p/ salvar os dados do sistema em arquivo txt 
 def salvarDados():
     if not livros:
