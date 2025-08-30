@@ -1,0 +1,19 @@
+# Evitar cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+
+# Evitar arquivos temporários
+*.log
+*.tmp
+*.bak
+
+# Evitar ambientes virtuais (se criar depois)
+venv/
+.env/
+
+# Evitar configs locais de IDE
+.vscode/
+.idea/

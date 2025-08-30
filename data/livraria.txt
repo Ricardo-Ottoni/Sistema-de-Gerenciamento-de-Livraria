@@ -1,0 +1,60 @@
+INTRODUÇÃO À LINGUAGEM SQL | Thomas Nield  | Computação e Informática | 44.00
+GUIA DO PYTHON PARA DATA SCIENCE | Jake VanderPlas | Computação e Informática | 103.32
+ENTENDENDO ALGORITMOS | Aditya Y. Bhargava | Computação e Informática | 57.75
+A MENTE DIGITAL | Gary Marcus | Computação e Mídias Digitais | 79.90
+MICHAELIS DICIONÁRIO ESCOLAR LÍNGUA PORTUGUESA | Equipe Melhoramentos | Educação | 41.00
+ALGORITMOS E LÓGICA DA PROGRAMAÇÃO | Marco A. Furlan de Souza | Programação | 71.35
+PYTHON PARA ANÁLISE DE DADOS | Wes Mckinney | Computação e Informática | 270.00
+DATA SCIENCE PARA NEGÓCIOS | Foster Provost | Computação | 83.86
+A ERA DA INTELIGÊNCIA ARTIFICIAL | Kai-Fu Lee | Computação e Mídias Digitais | 69.90
+NEXUS: UMA BREVE HISTÓRIA DAS REDES DE INFORMAÇÃO | R. Brian McNair | Computação e Mídias Digitais | 89.90
+A MENTE COMPUTACIONAL | Pedro Domingos | Computação e Mídias Digitais | 79.90
+A REVOLUÇÃO DOS DADOS | Viktor Mayer-Schönberger | Computação e Mídias Digitais | 89.90
+A ERA DA AUTOMATIZAÇÃO | Daniel Susskind | Computação e Mídias Digitais | 99.90
+CAFÉ COM DEUS PAI 2024: PORÇÕES DIÁRIAS DE PAZ | Júnior Rostirola | Religião / Autoajuda | 79.90
+A BIBLIOTECA DA MEIA-NOITE | Matt Haig e Adriana Fidalgo | Ficção | 59.90
+É ASSIM QUE ACABA: 1 | Colleen Hoover e Priscila Catão | Romance | 49.90
+É ASSIM QUE COMEÇA | Colleen Hoover | Romance | 49.90
+O HOMEM MAIS RICO DA BABILÔNIA | George S. Clason | Finanças Pessoais | 39.90
+TUDO É RIO | Carla Madeira | Romance | 44.00
+A PSICOLOGIA FINANCEIRA | Morgan Housel | Economia | 54.90
+VERITY | Colleen Hoover e Thaís Britto | Thriller | 54.90
+PERIGOSO! | Tim Warnes | Infantojuvenil | 34.90
+COMO FAZER AMIGOS E INFLUENCIAR PESSOAS | Dale Carnegie e Lívia de Almeida | Autoajuda | 34.90
+HÁBITOS ATÔMICOS | James Clear | Desenvolvimento Pessoal | 69.90
+OS SEGREDOS DA MENTE MILIONÁRIA | T. Harv Eker | Finanças Pessoais | 49.90
+O LIVRO QUE VOCÊ GOSTARIA QUE SEUS PAIS TIVESSEM LIDO | Philippa Perry e Gonçalo Miranda | Psicologia | 44.90
+NADA PODE ME FERIR | David Goggins e Fernanda Abreu | Biografia / Motivação | 54.90
+FORTE: DEVOCIONAIS PARA UMA VIDA PODEROSA | Lisa Bevere e Talita Nunes | Religião | 59.90
+A EMPREGADA | Freida McFadden | Suspense | 44.90
+O PEQUENO PRÍNCIPE – EDIÇÃO DE LUXO | Antoine de Saint-Exupéry | Clássico | 79.90
+O DEUS QUE DESTRÓI SONHOS | Rodrigo Bibo | Autoajuda | 39.90
+A PACIENTE SILENCIOSA | Alex Michaelides e Clóvis Marques | Suspense | 44.90
+MAIS ESPERTO QUE O DIABO: O MISTÉRIO DA LIBERDADE | Napoleon Hill | Autoajuda | 49.90
+A CORAGEM DE SER IMPERFEITO | Brené Brown e Bruno Perini | Desenvolvimento Pessoal | 59.90
+IMPERFEITOS | Christina Lauren | Romance | 39.90
+ESSENCIALISMO | Greg McKeown e Beatriz Medina | Produtividade | 44.90
+OS SETE MARIDOS DE EVELYN HUGO | Taylor Jenkins Reid | Romance | 54.90
+CAFE COM DEUS PAI (Edição 2025) | Júnior Rostirola | Religião | 79.90
+QUARTA ASA | Rebecca Yarros | Fantasia / Jovem Adulto | 69.90
+O SINAL E O RUÍDO | Nate Silver | Ciência / Estatística | 59.90
+O PINTASSILGO | Donna Tartt | Ficção | 89.90
+TODAS AS CORES DA ESCURIDÃO | Chris Whitaker | Suspense | 79.90
+O HOMEM QUE COMPROU O TEMPO | Thiago Nigro | Autoajuda | 49.90
+O CARA QUE ESTAVA A FIM NÃO É UM CARA?! (Vol 1) | Sumiko Arai | Romance | 44.90
+PRESSA DE FUTURO | Rogério Godinho | Biografia / Negócios | 59.90
+AS 48 LEIS DO PODER | Robert Greene | Política / Estratégia | 99.90
+A BIBLIOTECA DA MEIA-NOITE (Reedição) | Matt Haig e Adriana Fidalgo | Ficção | 59.90
+É ASSIM QUE COMEÇA (Reedição) | Colleen Hoover | Romance | 49.90
+CAFÉ COM DEUS PAI 2025 | Júnior Rostirola | Religião / Autoajuda | 89.90
+O HOMEM MAIS RICO DA BABILÔNIA (Edição Especial) | George S. Clason | Finanças Pessoais | 54.90
+VERITY (Edição Ampliada) | Colleen Hoover e Thaís Britto | Thriller | 59.90
+TUDO É RIO (Versão Deluxe) | Carla Madeira | Romance | 49.90
+A PSICOLOGIA FINANCEIRA (Edição Ilustrada) | Morgan Housel | Economia | 64.90
+PERIGOSO! 2 | Tim Warnes | Infantojuvenil | 39.90
+COMO FAZER AMIGOS E INFLUENCIAR PESSOAS (Edição Ilustrada) | Dale Carnegie | Autoajuda | 39.90
+HÁBITOS ATÔMICOS (Capa Dura) | James Clear | Desenvolvimento Pessoal | 79.90
+OS SEGREDOS DA MENTE MILIONÁRIA (Novo Autor) | T. Harv Eker | Finanças Pessoais | 54.90
+NADA PODE ME FERIR (Edição Comentada) | David Goggins | Biografia / Motivação | 59.90
+FORTE 2 | Lisa Bevere | Religião | 64.90
+O PEQUENO PRÍNCIPE – EDIÇÃO DE ANIVERSÁRIO | Antoine de Saint-Exupéry | Clássico | 84.90
