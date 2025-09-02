@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk 
 from styles import style
 
+from services.cadastrar import cadastrarLivro
+
 # Janela principal
 janela = tk.Tk()
 janela.title('SISTEMA DE GERENCIAMENTO DE LIVRARIA')
@@ -37,6 +39,7 @@ frameBotões.pack(
 btn1 = tk.Button(
     frameBotões, 
     text='Cadastrar Livro no Sistema', 
+    command=cadastrarLivro,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
