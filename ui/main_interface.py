@@ -1,8 +1,9 @@
 import tkinter as tk
-from tkinter import ttk 
-from styles import style
-
-from services.cadastrar import cadastrarLivro
+from tkinter import ttk, messagebox
+from ui.styles import style
+from core.database.carregar import carregarDados
+from ui.services.cadastrar import cadastrarLivro
+from ui.services.exibir import exibirLivros
 
 # Janela principal
 janela = tk.Tk()
@@ -10,6 +11,10 @@ janela.title('SISTEMA DE GERENCIAMENTO DE LIVRARIA')
 janela.geometry('850x750')
 janela.resizable(False, False)            # fixar tamanho janela
 janela.config(bg=style.COR_FUNDO)
+
+def sair():
+    janela.destroy()
+    messagebox.showinfo('', 'SISTEMA FINALIZADO')
 
 # Rótulo principal
 label = tk.Label(
@@ -49,6 +54,7 @@ btn1.pack(pady=(30, 15))
 
 btn2 = tk.Button(
     frameBotões, 
+    command=exibirLivros,
     text='Exibir Livros Cadastrados', 
     width=35, 
     bg=style.COR_BOTOES, 
@@ -60,6 +66,7 @@ btn2.pack(pady=15)
 btn3 = tk.Button(
     frameBotões, 
     text='Buscar um Livro Específico', 
+    #command=buscarLivro,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
@@ -70,6 +77,7 @@ btn3.pack(pady=15)
 btn4 = tk.Button(
     frameBotões, 
     text='Editar Dados de um Livro', 
+    #command=editarLivro,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
@@ -80,6 +88,7 @@ btn4.pack(pady=15)
 btn5 = tk.Button(
     frameBotões, 
     text='Excluir Livro do Sistema', 
+    #command=excluirLivro,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
@@ -90,6 +99,7 @@ btn5.pack(pady=15)
 btn6 = tk.Button(
     frameBotões, 
     text='Salvar Dados no Sistema', 
+    #command=salvarDados,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
@@ -100,12 +110,15 @@ btn6.pack(pady=15)
 btn7 = tk.Button(
     frameBotões, 
     text='Sair', 
+    command=sair, 
     width=35, 
     bg=style.COR_BOTAO_SAIR, 
     fg=style.COR_TEXTO, 
     font=style.FONTE_PADRAO
     )
 btn7.pack(pady=(15))
+
+carregarDados()     # verificar sempre ao iniciar a interface.
 
 # Exibir a janela
 janela.mainloop()
