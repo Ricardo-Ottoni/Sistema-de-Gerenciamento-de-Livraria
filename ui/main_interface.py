@@ -1,7 +1,10 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import messagebox
+
 from ui.styles import style
+
 from core.database.carregar import carregarDados
+from ui.database.salvar import salvarDadosUI
 from ui.services.cadastrar import cadastrarLivro
 from ui.services.exibir import exibirLivros
 
@@ -99,7 +102,7 @@ btn5.pack(pady=15)
 btn6 = tk.Button(
     frameBotões, 
     text='Salvar Dados no Sistema', 
-    #command=salvarDados,
+    command=salvarDadosUI,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
