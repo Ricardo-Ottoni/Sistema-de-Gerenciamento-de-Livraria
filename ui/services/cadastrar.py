@@ -4,7 +4,7 @@ from ui.styles import style
 from core import livros
 
 # Chamando as funções do terminal:
-def cadastrarLivro():
+def cadastrarLivroUI():
     janelaCadastrar = tk.Toplevel()
     janelaCadastrar.geometry('900x560+150+170')
     janelaCadastrar.config(bg=style.COR_FUNDO)  

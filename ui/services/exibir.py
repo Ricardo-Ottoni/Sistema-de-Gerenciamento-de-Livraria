@@ -36,7 +36,7 @@ def exibirLivros():
 
     # estilo da tabela - cores, fontes
     tree_style = ttk.Style()
-    tree_style.theme_use("default")
+    tree_style.theme_use("clam")
     tree_style.configure("Treeview.Heading",
                     background=style.COR_CABECALHO,         # cor de fundo do cabeçalho
                     foreground=style.COR_TEXTO,             # cor do texto do cabeçalho 

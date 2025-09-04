@@ -5,8 +5,9 @@ from ui.styles import style
 
 from core.database.carregar import carregarDados
 from ui.database.salvar import salvarDadosUI
-from ui.services.cadastrar import cadastrarLivro
+from ui.services.cadastrar import cadastrarLivroUI
 from ui.services.exibir import exibirLivros
+from ui.services.buscar import buscarLivroUI
 
 # Janela principal
 janela = tk.Tk()
@@ -47,7 +48,7 @@ frameBotões.pack(
 btn1 = tk.Button(
     frameBotões, 
     text='Cadastrar Livro no Sistema', 
-    command=cadastrarLivro,
+    command=cadastrarLivroUI,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
@@ -69,7 +70,7 @@ btn2.pack(pady=15)
 btn3 = tk.Button(
     frameBotões, 
     text='Buscar um Livro Específico', 
-    #command=buscarLivro,
+    command=buscarLivroUI,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
