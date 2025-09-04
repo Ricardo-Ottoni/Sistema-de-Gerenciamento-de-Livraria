@@ -8,6 +8,7 @@ from ui.database.salvar import salvarDadosUI
 from ui.services.cadastrar import cadastrarLivroUI
 from ui.services.exibir import exibirLivros
 from ui.services.buscar import buscarLivroUI
+from ui.services.editar import editarLivroUI
 
 # Janela principal
 janela = tk.Tk()
@@ -81,7 +82,7 @@ btn3.pack(pady=15)
 btn4 = tk.Button(
     frameBotões, 
     text='Editar Dados de um Livro', 
-    #command=editarLivro,
+    command=editarLivroUI,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 

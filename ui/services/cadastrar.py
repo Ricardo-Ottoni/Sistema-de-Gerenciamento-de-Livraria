@@ -17,50 +17,54 @@ def cadastrarLivroUI():
         bg=style.COR_FUNDO, 
         fg=style.COR_TITULOS,
     ).pack(pady=10)
+
+    # Frame p/ organizar os inputs 
+    frame_form = tk.Frame(janelaCadastrar, bg=style.COR_FUNDO)
+    frame_form.pack(pady=10, fill="x")
     
     # Título
     tk.Label(
-        janelaCadastrar, 
+        frame_form, 
         text='Título:',
         font=style.FONTE_PADRAO,
         bg=style.COR_FUNDO,
         fg=style.COR_TITULOS,
-    ).pack(pady=5)
-    entry_titulo = tk.Entry(janelaCadastrar, font=style.FONTE_INPUT)
-    entry_titulo.pack(pady=5, fill='x', padx=40)
+    ).pack(anchor='w', pady=(0,2), padx=40)
+    entry_titulo = tk.Entry(frame_form, font=style.FONTE_INPUT)
+    entry_titulo.pack(fill='x', pady=(0,8), padx=40)
 
     # Autor
     tk.Label(
-        janelaCadastrar, 
+        frame_form, 
         text='Autor:', 
         font=style.FONTE_PADRAO, 
         bg=style.COR_FUNDO,
         fg=style.COR_TITULOS,
-    ).pack(pady=5)
-    entry_autor = tk.Entry(janelaCadastrar, font=style.FONTE_INPUT)
-    entry_autor.pack(pady=5, fill='x', padx=40)
+    ).pack(anchor='w', pady=(0,2), padx=40)
+    entry_autor = tk.Entry(frame_form, font=style.FONTE_INPUT)
+    entry_autor.pack(fill='x', pady=(0,8), padx=40)
 
     # Gênero
     tk.Label(
-        janelaCadastrar, 
+        frame_form, 
         text='Gênero:', 
         font=style.FONTE_PADRAO,
         bg=style.COR_FUNDO,
         fg=style.COR_TITULOS,
-    ).pack(pady=5)
-    entry_genero = tk.Entry(janelaCadastrar, font=style.FONTE_INPUT)
-    entry_genero.pack(pady=5, fill='x', padx=40)
+    ).pack(anchor='w', pady=(0,2), padx=40)
+    entry_genero = tk.Entry(frame_form, font=style.FONTE_INPUT)
+    entry_genero.pack(fill='x', pady=(0,8), padx=40)
 
     # Preço
     tk.Label(
-        janelaCadastrar, 
+        frame_form, 
         text='Preço:', 
         font=style.FONTE_PADRAO,
         bg=style.COR_FUNDO,
         fg=style.COR_TITULOS,
-    ).pack(pady=5)
-    entry_preco = tk.Entry(janelaCadastrar, font=style.FONTE_INPUT)
-    entry_preco.pack(pady=5, fill='x', padx=40)
+    ).pack(anchor='w', pady=(0,2), padx=40)
+    entry_preco = tk.Entry(frame_form, font=style.FONTE_INPUT)
+    entry_preco.pack(fill='x', pady=(0,8), padx=40)
 
     # Função p/ enviar os dados ao backend
     def enviar():
