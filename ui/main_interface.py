@@ -6,7 +6,7 @@ from ui.styles import style
 from core.database.carregar import carregarDados
 from ui.database.salvar import salvarDadosUI
 from ui.services.cadastrar import cadastrarLivroUI
-from ui.services.exibir import exibirLivros
+from ui.services.exibir import exibirLivrosUI
 from ui.services.buscar import buscarLivroUI
 from ui.services.editar import editarLivroUI
 from ui.services.excluir import excluirLivroUI
@@ -60,7 +60,7 @@ btn1.pack(pady=(30, 15))
 
 btn2 = tk.Button(
     frameBotões, 
-    command=exibirLivros,
+    command=exibirLivrosUI,
     text='Exibir Livros Cadastrados', 
     width=35, 
     bg=style.COR_BOTOES, 

@@ -2,8 +2,9 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from ui.styles import style
 from core import livros
+from collections import Counter
 
-def exibirLivros():
+def exibirLivrosUI():
     if not livros:
         messagebox.showwarning('Lista de Livros', 'Não há livros cadastrados.')
         return
@@ -81,3 +82,36 @@ def exibirLivros():
     # posicionamento na tela
     tree.pack(side="left", fill="both", expand=True)
     scroll.pack(side="right", fill="y")
+
+    # rodapé - qtde de livros cadastrados
+    qtd_livros = len(livros)
+
+    # frame (área separada dentro da janela) p/ colocar os elementos do rodapé, c/ total de livros e botão
+    rodape = tk.Frame(janelaExibir, bg=style.COR_FUNDO)
+    rodape.pack(fill="x", pady=(10, 15))
+
+    # qtde livros cadastrados
+    tk.Label(
+        rodape,
+        text=f"Total de livros cadastrados: {qtd_livros}",
+        font=style.FONTE_PADRAO,
+        bg=style.COR_FUNDO,
+        fg=style.COR_TITULOS
+    ).pack()
+
+    # clicou no botão 'Gêneros'
+    def mostrarGeneros():
+        contagem = Counter(l['genero'] for l in livros)     # classe counter = conta qtos livros existem em cada gênero
+        linhas = [f"{g}: {q}" for g, q in sorted(contagem.items())]     # sorted = p/ ordenar de A-Z
+        texto = "\n".join(linhas)                                       # junta as linhas em texto único
+        messagebox.showinfo("Resumo de Gêneros", texto, parent=janelaExibir)
+
+    tk.Button(
+        rodape,
+        text="Gêneros",
+        command=mostrarGeneros,
+        bg=style.COR_BOTOES,
+        fg=style.COR_TEXTO,
+        font=style.FONTE_PADRAO,
+        width=10
+    ).pack(pady=5)
