@@ -9,6 +9,7 @@ from ui.services.cadastrar import cadastrarLivroUI
 from ui.services.exibir import exibirLivros
 from ui.services.buscar import buscarLivroUI
 from ui.services.editar import editarLivroUI
+from ui.services.excluir import excluirLivroUI
 
 # Janela principal
 janela = tk.Tk()
@@ -93,7 +94,7 @@ btn4.pack(pady=15)
 btn5 = tk.Button(
     frameBotões, 
     text='Excluir Livro do Sistema', 
-    #command=excluirLivro,
+    command=excluirLivroUI,
     width=35, 
     bg=style.COR_BOTOES, 
     fg=style.COR_TEXTO, 
